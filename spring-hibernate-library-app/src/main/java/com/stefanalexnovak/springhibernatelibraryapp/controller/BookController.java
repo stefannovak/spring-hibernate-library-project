@@ -3,20 +3,33 @@ package com.stefanalexnovak.springhibernatelibraryapp.controller;
 import com.stefanalexnovak.springhibernatelibraryapp.model.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BookController {
 
     @RequestMapping("/")
     public String test(Model model) {
-        Book book = new Book(0, "Eh", "waow", "amazing!", "one more?");
-        model.addAttribute("book", book);
+        model.addAttribute("book", new Book());
         return "home";
     }
 
-    @RequestMapping("/form")
-    public String form(Model model) {
+    @GetMapping("/form")
+    public String bookForm(Model model) {
+        model.addAttribute("book", new Book());
         return "form";
     }
+
+    @PostMapping("/form")
+    String bookSubmitted(@ModelAttribute() Book book) {
+        return "formSubmitted";
+    }
+
+//    @RequestMapping(value = "/submitted", method = RequestMethod.POST)
+//    String resultPage(Model model) {
+//        Book book = new Book();
+//
+//        model.addAttribute("Book", book);
+//        return "formSubmitted";
+//    }
 }

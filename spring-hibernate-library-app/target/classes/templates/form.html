@@ -3,6 +3,7 @@
     <title>Library App | Stefan Novak</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -26,7 +27,7 @@
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
             <a href="https://www.stefanalexnovak.com" target="_blank"  class="w3-bar-item w3-button w3-padding-large">Portfolio Website</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
+            <a class="w3-bar-item w3-button w3-padding-large">Login</a>
         </div>
     </div>
 
@@ -64,34 +65,36 @@
                             <h2>Add a book!</h2>
                         </div>
 
-                        <form class="w3-container">
+                        <form action="#" th:action="@{/form}" th:object="${book}" method="post" class="w3-container">
                             <p>
-                                <input class="w3-input" type="text">
+                                <input type="text" th:field="*{title}" class="w3-input"/>
                                 <label>Title *</label>
                             </p>
                             <p>
-                                <input class="w3-input" type="text">
+                                <input type="text" th:field="*{author}" class="w3-input"/>
                                 <label>Author *</label>
                             </p>
                             <p>
-                                <input class="w3-input" type="text">
+                                <input type="text" th:field="*{genre}" class="w3-input"/>
                                 <label>Genre *</label>
                             </p>
                             <p>
-                                <input class="w3-input" type="text">
+                                <input type="text" th:field="*{location}" class="w3-input"/>
                                 <label>Location</label>
                             </p>
                             <p>
-                                <input class="w3-input" type="text">
+                                <input type="text" th:field="*{special}" class="w3-input"/>
                                 <label>Any special notes?</label>
                             </p>
-                            <button style="text-decoration: none;">Add!</button>
+                            <button type="submit" value="Add!" style="text-decoration: none;">Add!</button>
                             <br>
                             <p style="font-size: 12px;">* mandatory field</p>
                         </form>
+
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>

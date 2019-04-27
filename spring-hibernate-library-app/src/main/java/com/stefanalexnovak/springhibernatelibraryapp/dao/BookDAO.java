@@ -7,7 +7,7 @@ import java.util.List;
 public interface BookDAO {
     List<Book> findAll();
     Book findById(Long id);
-    void update();
+    void update(Book book, String[] params);
     void save();
     void delete();
 }
