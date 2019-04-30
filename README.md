@@ -1,3 +1,6 @@
+UPDATE: 30/04/19
+Project currently on hold for a short time while I catch up with university work. 
+
 This is my final project on my Library app I have been developing
 
 I started it on 20/04/2019 after my Hibernate app. As soon as I developed that I knew I needed to turn it into a user-friendly interactive experience online. 
