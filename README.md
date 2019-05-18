@@ -1,6 +1,9 @@
 UPDATE: 30/04/19
 Project currently on hold for a short time while I catch up with university work. 
 
+UPDATE: 18/05/19
+Still on hold for a little while. Uni assignment coming up and spent a lot of time figuring out an interview challenge given to me by a company. Figured I need to brush up on the basics, especially Collections.
+
 This is my final project on my Library app I have been developing
 
 I started it on 20/04/2019 after my Hibernate app. As soon as I developed that I knew I needed to turn it into a user-friendly interactive experience online. 
