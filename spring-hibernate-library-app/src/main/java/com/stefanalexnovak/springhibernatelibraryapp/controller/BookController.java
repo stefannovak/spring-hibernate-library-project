@@ -10,7 +10,6 @@ public class BookController {
 
     @RequestMapping("/")
     public String test(Model model) {
-        model.addAttribute("book", new Book());
         return "home";
     }
 

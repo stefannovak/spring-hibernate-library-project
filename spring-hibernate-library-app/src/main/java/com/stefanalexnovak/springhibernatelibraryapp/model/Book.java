@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String title;
     private String author;
@@ -17,34 +17,26 @@ public class Book {
     private String location;
     private String special;
 
-//    public Book () {}
-//
-//    public Book(long id, String title, String author, String genre, String location, String special) {
-//        this.id = id;
-//        this.title = title;
-//        this.author = author;
-//        this.genre = genre;
-//        this.location = location;
-//        this.special = special;
-//    }
-//
-//    public Book(long id, String title, String author, String genre, String location) {
-//        this.id = id;
-//        this.title = title;
-//        this.author = author;
-//        this.genre = genre;
-//        this.location = location;
-//    }
+    public Book(){}
+
+    public Book(long id, String title, String author, String genre, String location, String special) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.location = location;
+        this.special = special;
+    }
 
     public String toString() {
         return "Book(Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre + ", Location: " + this.location + ", Note: " + this.special + ")";
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
