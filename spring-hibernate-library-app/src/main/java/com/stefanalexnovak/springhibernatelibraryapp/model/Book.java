@@ -6,10 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name = "Books")
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Book extends BaseEntity{
 
     private String title;
     private String author;
@@ -19,25 +16,8 @@ public class Book {
 
     public Book(){}
 
-    public Book(long id, String title, String author, String genre, String location, String special) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.location = location;
-        this.special = special;
-    }
-
     public String toString() {
         return "Book(Title: " + this.title + ", Author: " + this.author + ", Genre: " + this.genre + ", Location: " + this.location + ", Note: " + this.special + ")";
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
