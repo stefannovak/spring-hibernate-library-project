@@ -1,6 +1,7 @@
 package com.stefanalexnovak.springhibernatelibraryapp.controller;
 
 import com.stefanalexnovak.springhibernatelibraryapp.model.Book;
+import com.stefanalexnovak.springhibernatelibraryapp.services.BookService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,15 @@ public class BookController {
         return "home";
     }
 
+    public BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
+
     @GetMapping("/form")
     public String bookForm(Model model) {
-        model.addAttribute("book", new Book());
+        model.addAttribute("books", bookService.findAll());
         return "form";
     }
 

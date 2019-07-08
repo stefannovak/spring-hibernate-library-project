@@ -47,11 +47,20 @@
 
                     <table class="w3-table-all">
                         <tr>
+                            <th style="text-decoration: underline;">ID</th>
                             <th style="text-decoration: underline;">Title</th>
                             <th style="text-decoration: underline;">Author</th>
                             <th style="text-decoration: underline;">Genre</th>
                             <th style="text-decoration: underline;">Location</th>
                             <th style="text-decoration: underline;">Notes</th>
+                        </tr>
+                        <tr th:each="book : ${books}">
+                            <td th:text="${book.id}">Test ID</td>
+                            <td th:text="${book.title}">Test Title</td>
+                            <td th:text="${book.author}">Test Author</td>
+                            <td th:text="${book.genre}">Test Genre</td>
+                            <td th:text="${book.location}">Test Location</td>
+                            <td th:text="${book.special}">Test Notes</td>
                         </tr>
                     </table>
                 </div>
@@ -65,25 +74,25 @@
                             <h2>Add a book!</h2>
                         </div>
 
-                        <form action="#" th:action="@{/form}" th:object="${book}" method="post" class="w3-container">
+                        <form action="#" method="post" class="w3-container">
                             <p>
-                                <input type="text" th:field="*{title}" class="w3-input"/>
+<!--                                <input type="text" th:field="*{title}" class="w3-input"/>-->
                                 <label>Title *</label>
                             </p>
                             <p>
-                                <input type="text" th:field="*{author}" class="w3-input"/>
+<!--                                <input type="text" th:field="*{author}" class="w3-input"/>-->
                                 <label>Author *</label>
                             </p>
                             <p>
-                                <input type="text" th:field="*{genre}" class="w3-input"/>
+<!--                                <input type="text" th:field="*{genre}" class="w3-input"/>-->
                                 <label>Genre *</label>
                             </p>
                             <p>
-                                <input type="text" th:field="*{location}" class="w3-input"/>
+<!--                                <input type="text" th:field="*{location}" class="w3-input"/>-->
                                 <label>Location</label>
                             </p>
                             <p>
-                                <input type="text" th:field="*{special}" class="w3-input"/>
+<!--                                <input type="text" th:field="*{special}" class="w3-input"/>-->
                                 <label>Any special notes?</label>
                             </p>
                             <button type="submit" value="Add!" style="text-decoration: none;">Add!</button>
